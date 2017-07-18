@@ -18,7 +18,6 @@ from appdirs import *
 
 import argparse
 
-
 audioFormat='mp3'
 
 def fixYoutubeURL(url):
@@ -110,11 +109,9 @@ class Args:
 
 	def createParser(self):
 		parser = argparse.ArgumentParser(description='Look up the pronunciation of a word or a phrase in Youtube.')
-
+		
 		parser.add_argument('words', metavar='WORDS', type=str, nargs='+', help='One or more words to be pronounced')
-
 		parser.add_argument('--config', metavar='CONFIG_FILE', type=str, help='Use a custom configuration file')
-
 		parser.add_argument('--api-key', metavar='YOUR_API_KEY', type=str, help='Your Youtube Data API key')
 
 		group = parser.add_mutually_exclusive_group()

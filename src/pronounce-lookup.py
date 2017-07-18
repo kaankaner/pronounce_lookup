@@ -109,7 +109,7 @@ class Args:
 
 	def createParser(self):
 		parser = argparse.ArgumentParser(description='Look up the pronunciation of a word or a phrase in Youtube.')
-		
+
 		parser.add_argument('words', metavar='WORDS', type=str, nargs='+', help='One or more words to be pronounced')
 		parser.add_argument('--config', metavar='CONFIG_FILE', type=str, help='Use a custom configuration file')
 		parser.add_argument('--api-key', metavar='YOUR_API_KEY', type=str, help='Your Youtube Data API key')
@@ -326,7 +326,7 @@ class App:
 
 
 
-# A class which provides a method "search" which internally uses the Youtube Data API.
+# A class which provides a method "search", which internally uses the Youtube Data API.
 class SearchWithAPI:
 	def __init__(self, api_key):
 		self.api_key = api_key;
@@ -377,7 +377,7 @@ class SearchWithAPI:
 
 		return videos
 
-# A class which provides a method "search" which internally uses a direct http request.
+# A class which provides a method "search", which internally uses a direct http request.
 class SearchWithHTTP:
 	def __init__(self):
 		pass

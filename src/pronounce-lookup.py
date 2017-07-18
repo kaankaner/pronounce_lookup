@@ -272,8 +272,7 @@ class App:
 		self.searchTerm = combineWords(args.args.words)
 		print "Search term:" + "'" + self.searchTerm + "'"
 
-	# Our main task.
-	def doIt(self):
+	def mainTask(self):
 		try:
 			self.tempDir = TempDir()
 			self.tempDir.prepareTempDir()
@@ -325,8 +324,7 @@ class App:
 		return os.path.join(self.tempDir.tempdir, 'temp' + str(id) + '.' + audioFormat)
 
 
-
-# A class which provides a method "search", which internally uses the Youtube Data API.
+# A class providing a method to search in youtube.com, which internally uses the Youtube Data API.
 class SearchWithAPI:
 	def __init__(self, api_key):
 		self.api_key = api_key;
@@ -377,7 +375,8 @@ class SearchWithAPI:
 
 		return videos
 
-# A class which provides a method "search", which internally uses a direct http request.
+
+# A class providing a method to search in youtube.com, which internally uses an HTTP request.
 class SearchWithHTTP:
 	def __init__(self):
 		pass
@@ -399,13 +398,12 @@ class SearchWithHTTP:
 
 		return findEntryInSoup(soup)
 
-
-
+# Main entry point.
 def main():
 
 	app = App()
 	app.initialize()
-	app.doIt()
+	app.mainTask()
 
 	print 'Finished...'
 
